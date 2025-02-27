@@ -1,0 +1,107 @@
+[
+  {
+    "id": 0,
+    "title": "Букет 'Рубиновое сияние'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-1366.png",
+    "categories": 1,
+    "price": 3800
+  },
+  {
+    "id": 1,
+    "title": "Букет 'Любовь к жизни'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-8219.png",
+    "categories": 1,
+    "price": 3030
+  },
+  {
+    "id": 2,
+    "title": "Букет 'Радуга чувств'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-6894.png",
+    "categories": 1,
+    "price": 4570
+  },
+  {
+    "id": 3,
+    "title": "Одна красная роза",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-543.png",
+    "categories": 3,
+    "price": 150
+  },
+  {
+    "id": 4,
+    "title": "Одна белая роза",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-3144.png",
+    "categories": 3,
+    "price": 150
+  },
+  {
+    "id": 5,
+    "title": "Одна розовая роза",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-3145.png",
+    "categories": 3,
+    "price": 150
+  },
+  {
+    "id": 6,
+    "title": "Настольная композиция 'Зимняя сказка'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-7473.png",
+    "categories": 5,
+    "price": 5000
+  },
+  {
+    "id": 7,
+    "title": "Настольная композиция 'Весеннее утро'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-8202.png",
+    "categories": 5,
+    "price": 4500
+  },
+  {
+    "id": 8,
+    "title": "Настольная композиция 'Летний вечер'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-8258.png",
+    "categories": 5,
+    "price": 4700
+  },
+  {
+    "id": 9,
+    "title": "Подарочный набор 'Сладкий сюрприз'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-2599_0.png",
+    "categories": 2,
+    "price": 6000
+  },
+  {
+    "id": 10,
+    "title": "Подарочный набор 'Романтика'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-2275.png",
+    "categories": 2,
+    "price": 7000
+  },
+  {
+    "id": 11,
+    "title": "Подарочный набор 'Нежность'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-7487.png",
+    "categories": 2,
+    "price": 6500
+  },
+  {
+    "id": 12,
+    "title": "Корзина с розами 'Красное вино'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-1549.jpg",
+    "categories": 4,
+    "price": 8000
+  },
+  {
+    "id": 13,
+    "title": "Корзина с тюльпанами 'Весенняя радость'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-6713.png",
+    "categories": 4,
+    "price": 7500
+  },
+  {
+    "id": 14,
+    "title": "Корзина с лилиями 'Белоснежка'",
+    "imageURL": "https://saratov.rus-buket.ru/files/icons/icon-7118.png",
+    "categories": 4,
+    "price": 8200
+  }
+]
