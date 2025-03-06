@@ -1,11 +1,22 @@
 import React from 'react';
-function Sort() {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const list = ['популярности', 'цене', 'алфавиту'];
-  const [selected, setSelected] = React.useState(0);
+type SortProps = {
+  value: { name: string; sort: string };
+  onClickSort: (obj: { name: string; sort: string }) => void;
+};
 
-  const onClickList = (i: number) => {
-    setSelected(i);
+function Sort({ value, onClickSort }: SortProps) {
+  const [isVisible, setIsVisible] = React.useState(false);
+  const list = [
+    { name: 'популярность (убыванию)', sort: 'rating' },
+    { name: 'популярность (возрастанию)', sort: '-rating' },
+    { name: 'цене (убыванию)', sort: 'price' },
+    { name: 'цене (возрастанию)', sort: '-price' },
+    { name: 'алфавиту (убыванию)', sort: 'title' },
+    { name: 'алфавиту (возрастанию)', sort: '-title' },
+  ];
+
+  const onClickList = (obj: {name: string, sort: string}) => {
+    onClickSort(obj);
     setIsVisible(false);
   };
 
@@ -16,14 +27,14 @@ function Sort() {
           <path d="M10 5C10 5.16927 9.93815 5.31576 9.81445 5.43945C9.69075 5.56315 9.54427 5.625 9.375 5.625H0.625C0.455729 5.625 0.309245 5.56315 0.185547 5.43945C0.061849 5.31576 0 5.16927 0 5C0 4.83073 0.061849 4.68424 0.185547 4.56055L4.56055 0.185547C4.68424 0.061849 4.83073 0 5 0C5.16927 0 5.31576 0.061849 5.43945 0.185547L9.81445 4.56055C9.93815 4.68424 10 4.83073 10 5Z" fill="#2C2C2C" />
         </svg>
         <b>Сортировка по:</b>
-        <span onClick={() => setIsVisible(!isVisible)}>{list[selected]}</span>
+        <span onClick={() => setIsVisible(!isVisible)}>{value.name}</span>
       </div>
       {isVisible && (
         <div className="sort__popup">
           <ul>
-            {list.map((name, i) => (
-              <li key={i} onClick={() => onClickList(i)} className={selected == i ? 'active' : ''}>
-                {name}
+            {list.map((obj, i) => (
+              <li key={i} onClick={() => onClickList(obj)} className={value.sort == obj.sort ? 'active' : ''}>
+                {obj.name}
               </li>
             ))}
           </ul>
