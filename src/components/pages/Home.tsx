@@ -3,12 +3,17 @@ import Categories from '../Categories.tsx';
 import Sort from '../Sort.tsx';
 import FlowerBlock from '../FlowerBlock.tsx';
 import Skeleton from '../Skeleton.jsx';
+interface HeaderProps {
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
 
-export const Home = () => {
+export const Home = ({ searchValue, setSearchValue }: HeaderProps) => {
+  console.log(searchValue);
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
 
-  const [categoriesId, setCategoiresId] = React.useState(1); //categories.tsx
+  const [categoriesId, setCategoiresId] = React.useState(0); //categories.tsx
 
   const [sortType, setSortType] = React.useState({
     name: 'популярность',
@@ -21,7 +26,8 @@ export const Home = () => {
     const order = sortType.sort.includes('-') ? 'asc' : 'desc';
     const sortBy = sortType.sort.replace('-', '');
     const categories = categoriesId > 0 ? `categories=${categoriesId}` : '';
-    fetch(`https://6790a6e7af8442fd73771b53.mockapi.io/items?${categories}&sortBy=${sortBy}&order=${order}`)
+    const search = searchValue ? `&search=${searchValue}` : '';
+    fetch(`https://6790a6e7af8442fd73771b53.mockapi.io/items?${categories}&sortBy=${sortBy}&order=${order}${search}`)
       .then((res) => {
         return res.json();
       })
@@ -30,7 +36,7 @@ export const Home = () => {
         setIsLoading(false);
       });
     window.scrollTo(0, 0);
-  }, [categoriesId, sortType]);
+  }, [categoriesId, sortType, searchValue]);
   return (
     <>
       <div className="content__top">
@@ -38,7 +44,7 @@ export const Home = () => {
         <Sort value={sortType} onClickSort={(i) => setSortType(i)} />
       </div>
       <h2 className="content__title">Все цветы</h2>
-      <div className="content__items">{isLoading ? [...new Array(8)].map(() => <Skeleton />) : items.map((obj) => <FlowerBlock key={obj.id} {...obj} />)}</div>
+      <div className="content__items">{isLoading ? ([...new Array(8)].map(() => <Skeleton />)) : items.map((obj) => <FlowerBlock key={obj.id} {...obj} />)}</div>
     </>
   );
 };

@@ -1,8 +1,13 @@
 import { Link } from 'react-router';
-
+import Search from './pages/Search';
 import logoPng from '../assets/img/Group.png';
 
-function Header() {
+interface HeaderProps {
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function Header({ searchValue, setSearchValue }: HeaderProps) {
   return (
     <div className="header">
       <div className="container">
@@ -15,6 +20,7 @@ function Header() {
             </div>
           </div>
         </Link>
+        <Search searchValue={searchValue} setSearchValue={setSearchValue} />
         <div className="header__cart">
           <Link to="/cart" className="button button--cart">
             <span>520 ₽</span>
